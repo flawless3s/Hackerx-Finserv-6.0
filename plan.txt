@@ -1,0 +1,10 @@
+PDF -> Extract text -> Extraction of Structured Queries(LLM) -> Understand Meaning (Semantic use FaISS/Pinecone) -> Get Query -> Compare extracted clauses from document with Query (find similarity) ->
+
+
+Tech Stack
+Python
+FastAPI
+Pinecone
+GPT-4 LLM
+PostgreSQL
+Streamlit (Frontend)
