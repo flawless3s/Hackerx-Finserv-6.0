@@ -1,0 +1,23 @@
+# Ignore virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# VS Code settings (optional)
+.vscode/
+
+# Jupyter Notebook checkpoints (if used)
+.ipynb_checkpoints/
+
+# Logs or temporary files (optional)
+*.log
+*.tmp
+
+#Specific Files
+sem-1.pdf
+plan.txt
