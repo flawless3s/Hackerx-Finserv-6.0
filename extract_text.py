@@ -21,11 +21,4 @@ def extract_text_from_docx(path):
         return ""
     
 
-if __name__ == "__main__":
-    pdf_path = "sem-1.pdf"
-    text = extract_text_from_pdf(pdf_path)
-    print(text[:1000])
-    doc_path = "FINAL YEAR SYNOPSIS.docx"
-    text_doc = extract_text_from_docx(doc_path)
-    print(text_doc[:1000])
     

@@ -7,7 +7,7 @@ __pycache__/
 
 # Environment variables
 .env
-
+Shubh\.env
 # VS Code settings (optional)
 .vscode/
 
@@ -22,3 +22,7 @@ __pycache__/
 sem-1.pdf
 plan.txt
 FINAL YEAR SYNOPSIS.docx
+test.py
+Shubh\Test_Doc_1.pdf
+Shubh\Test_Doc_2.pdf
+

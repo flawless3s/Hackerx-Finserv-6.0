@@ -1,9 +1,15 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configuration
 API_BASE_URL = "http://localhost:8000"
 TEST_PDF_URL = "./Test_Doc_2.pdf"  # Replace with actual PDF URL
+AUTH_TOKEN = os.getenv("API_AUTH_TOKEN")  # This must match API_AUTH_TOKEN in the .env
+
 
 def test_health_check():
     """Test the health check endpoint"""
@@ -38,8 +44,9 @@ def test_main_endpoint():
         response = requests.post(
             f"{API_BASE_URL}/api/v1/hackrx/run",
             json=test_payload,
-            headers={"Content-Type": "application/json"},
-            timeout=60  # 60 seconds timeout
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {AUTH_TOKEN}"},
+            timeout=300  # 60 seconds timeout
         )
         
         print(f"Response status: {response.status_code}")
@@ -76,7 +83,7 @@ def test_with_local_file():
     local_test_payload = {
         "documents": "./Test_Doc_2.pdf",  # Using your working PDF file
         "questions": [
-            "What is the grace period of this policy?",
+            "Which gynaecological illnesses are covered?",
         ]
     }
     
@@ -84,8 +91,9 @@ def test_with_local_file():
         response = requests.post(
             f"{API_BASE_URL}/api/v1/hackrx/run",
             json=local_test_payload,
-            headers={"Content-Type": "application/json"},
-            timeout=60
+            headers={"Content-Type": "application/json",
+                     "Authorization": f"Bearer {AUTH_TOKEN}"},
+            timeout=300
         )
         
         print(f"Local file test status: {response.status_code}")
