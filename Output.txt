@@ -1,0 +1,6 @@
+This document is a project synopsis for an AI-powered stock market analysis and prediction system with auto portfolio rebalancing, developed by Mannan Jain, Marc Daniel, and Rushil Bhandarkar at Mukesh Patel School of Technology Management & Engineering. The project aims to develop a MERN-based web application that integrates LSTM-based machine learning models for real-time stock price forecasting, secure user authentication, portfolio management, and transaction tracking. The system will utilize data from yfinance and Kaggle, and employ libraries like Chart.js, Recharts, and TensorFlow.js. The literature survey highlights various research contributions in stock price prediction using RNNs, sentiment analysis, and deep learning architectures. The project distinguishes itself from existing platforms by combining real-time stock prediction with personalized auto-portfolio rebalancing.
+Mannan Jain (A037)
+Marc Daniel (A038)
+Rushil Bhandarkar (A051)
+I am sorry, but based on the context provided, I cannot answer the question "What technique does kite use?". The text does not mention Kite.
+According to the provided text, Zerodha focuses on manual technical indicators.

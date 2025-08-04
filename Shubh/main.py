@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header, Depends
 from pydantic import BaseModel
 from typing import List
 import logging
@@ -81,8 +81,13 @@ async def health_check():
         "embedding_model": "text-embedding-004"
     }
 
+def validate_token(authorization: str = Header(...)):
+    expected_token = f"Bearer {os.getenv('API_AUTH_TOKEN')}"
+    if authorization != expected_token:
+        raise HTTPException(status_code=401, detail="Unauthorized")
+    
 @app.post("/api/v1/hackrx/run", response_model=HackathonResponse)
-async def run_submission(request: HackathonRequest):
+async def run_submission(request: HackathonRequest,  token: None = Depends(validate_token)):
     """
     Main RAG endpoint that processes documents and answers questions
     """
